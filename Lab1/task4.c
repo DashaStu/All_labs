@@ -68,7 +68,8 @@ int main(int argc, char* argv[]) {
         printf("Некорректный ввод\n");
         return INVALID_INPUT;
     }
-    if (!((argv[1][0] == '-' || argv[1][0] == '/') && (argv[1][2] == '\0' || (argv[1][3] == '\0' && argv[1][2] == 'n')))) {
+    if (!((argv[1][0] == '-' || argv[1][0] == '/') && (strlen(argv[1]) == 2
+    || (strlen(argv[1]) == 3 && argv[1][1] == 'n')))) {
         printf("Некорректный флаг\n");
         return INVALID_INPUT;
     }

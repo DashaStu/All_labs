@@ -8,7 +8,9 @@ enum errors polynomial_n(double* res, double x, int n, ...){
     *res = 0;
     va_start(temp, n);
     for(int i = n; i >= 0;i--){
-        *res += (va_arg(temp, double) * pow(x, i));
+        double kof = va_arg(temp, double);
+        *res += (kof * pow(x, i));
+        //printf("op %lf %lf\n", kof, pow(x, i));
         if(isnan(*res) || isinf(*res)) {
             va_end(temp);
             return OVER;
@@ -77,7 +79,7 @@ enum errors kaprekar(char** result, int base, int count, ...) {
         char *num_str = va_arg(args, char*);
 
         if (!is_valid_number(num_str, base)) {
-            //printf("Число %s некорректно для системы счисления с основанием %d\n", num_str, base);
+            //printf("Число некорректно для сс\n");
             continue;
         }
         char* endptr;

@@ -16,13 +16,28 @@ int main(){
     {
         printf("Result: no\n");
     }
+    p1 = (Point){0, 0};
+    p2 = (Point){4, 0};
+    p3 = (Point){5, 2};
+    p4 = (Point){2, 1};
+    Point p5 = (Point){0,4};
+    res = convex_polygon(5, p1, p2, p3, p4, p5);
+    if(res)
+    {
+        printf("Result: yes\n");
+    }
+    else
+    {
+        printf("Result: no\n");
+    }
     printf("Task 4.2\n");
     double result;
-    if(polynomial_n(&result, 1, 1, 0.5) == OK){
+    enum errors res_pol = polynomial_n(&result, 2.0, 0, 6.0);
+    if(res_pol == OK){
         printf("%lf\n", result);
 
     }
-    else if(polynomial_n(&result, 1, 1, 0.5) == INVALID_INPUT){
+    else if(res_pol == INVALID_INPUT){
         printf("Invalid input\n");
     }
     else{
