@@ -33,13 +33,14 @@ enum errors prime_factors(int n, int** factors, int* size) {
 }
 
 enum errors drob(double** result, int* len, int count, int base, ...) {
+    if (base < 2 || base > 36) {
+        return INVALID_INPUT;
+    }
     (*result) = (double*)malloc(count * sizeof(double));
     if ((*result) == NULL) {
         return INVALID_MEMORY;
     }
-    if (base < 2 || base > 36) {
-        return INVALID_INPUT;
-    }
+
 
     va_list temp;
     va_start(temp, base);
@@ -72,7 +73,9 @@ enum errors drob(double** result, int* len, int count, int base, ...) {
             znam /= gcd_znam;
         }
         // Разложим основание на простые множители
-        prime_factors(base, &factor, &size);
+        if(prime_factors(base, &factor, &size) == INVALID_MEMORY){
+            return INVALID_MEMORY;
+        }
 
         // Убираем простые множители основания из знаменателя
         for (int j = 0; j < size; j++) {

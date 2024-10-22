@@ -73,7 +73,7 @@ double sum_d(double x, double epsilon) {
 enum errors input_valid(char* str, double *res){
     int size_str = strlen(str);
     int flag_to = 0;
-    if(size_str > 12) return INVALID_INPUT;
+    if(size_str > 5) return INVALID_INPUT;
     if(str[0] == '-') return INVALID_INPUT;
     if(str[0] == '.') return INVALID_INPUT;
     for(int i = 0; i < size_str;i++){
@@ -151,6 +151,6 @@ int main(int argc, char* argv[]) {
     else {
         printf("Для суммы с, d есть ограничения\n");
     }
-
+    printf("%lu", sizeof(long double));
     return 0;
 }

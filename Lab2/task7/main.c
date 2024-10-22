@@ -2,7 +2,7 @@
 
 int main(){
     double res_funk;
-    double a = -3;
+    double a = -5;
     double b = 3 * M_PI/2;
     enum dihtomy res = solve(&res_funk, a, b, 0.00001, funk1);
     if(res == OK){

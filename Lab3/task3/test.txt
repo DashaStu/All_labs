@@ -1,0 +1,4 @@
+5:IvanovIvanovIvanovIvanovIvanovIvanovIvanovIvanovIvanov:Ilua:56.0
+8:Ivanov:Artem:56.0
+2:Ivanov:Artem:56.0
+10:Petyhov:Oleg:124.0

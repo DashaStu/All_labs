@@ -3,13 +3,7 @@
 int main(){
     char file_1[] = "test1.txt";
     char file_2[] = "test2.txt";
-    /*FILE* f1 = fopen(file_1, "r");
-    FILE* f2 = fopen(file_2, "r");
-    if(f1 == NULL || f2 == NULL){
-        printf("fuck\n");
-    }
-    else printf("GOOD\n");*/
-    char substr[] = "hello";
+    char substr[] = "hell\no";
     struct Sub * subs = NULL;
     int len = 0;
     if (find_substring_in_file(&subs, substr, &len, 2, file_1, file_2) != OK)
@@ -19,6 +13,7 @@ int main(){
     }
 
     struct Sub * current = subs;
+    int k = 0;
     while(current != NULL)
     {
         if(current->flag_open == 0)
@@ -27,9 +22,13 @@ int main(){
         }
         else
         {
-            printf("File: %s, № string%d: index:%d\n", current->filename, current->line, current->index);
+            printf("File: %s, №string %d: index:%d\n", current->filename, current->line, current->index);
+            k++;
         }
         current = current->next;
+    }
+    if(k == 0){
+        printf("Not have\n");
     }
     current = subs;
     while(current != NULL)

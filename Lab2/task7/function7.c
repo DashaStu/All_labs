@@ -1,14 +1,14 @@
 #include "task7.h"
 
-double funk1(double x){//-5 6
+double funk1(double x){
     return x + 4;
 }
 
-double funk2(double x){//pi/2 -3i/2
+double funk2(double x){
     return sin(x) + 1;
 }
 
-double funk3(double x){//0 2
+double funk3(double x){
     return (x + 1)*(x - 2)*(x - 2)*(x - 2);
 }
 

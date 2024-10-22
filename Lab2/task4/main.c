@@ -1,6 +1,7 @@
 #include "task4.h"
 
 int main(){
+    //printf("%lu", sizeof(long));
     printf("Task 4.1\n");
     Point p1 = (Point){0, 0};
     Point p2 = (Point){1, 0};
@@ -17,10 +18,10 @@ int main(){
         printf("Result: no\n");
     }
     p1 = (Point){0, 0};
-    p2 = (Point){4, 0};
-    p3 = (Point){5, 2};
-    p4 = (Point){2, 1};
-    Point p5 = (Point){0,4};
+    p2 = (Point){0, 2};
+    p3 = (Point){1, 1};
+    p4 = (Point){2, 2};
+    Point p5 = (Point){2,0};
     res = convex_polygon(5, p1, p2, p3, p4, p5);
     if(res)
     {
@@ -32,7 +33,7 @@ int main(){
     }
     printf("Task 4.2\n");
     double result;
-    enum errors res_pol = polynomial_n(&result, 2.0, 0, 6.0);
+    enum errors res_pol = polynomial_n(&result, 2.0, 1, 2.0, 2.0);
     if(res_pol == OK){
         printf("%lf\n", result);
 
@@ -48,7 +49,7 @@ int main(){
     enum errors funk = kaprekar(&result_3, 10, 4, "45", "297", "10", "-123");
     if(funk == OK){
         printf("%s\n", result_3);
-        if(result_3 != NULL) free(result_3);
+        free(result_3);
     }
     else if(funk == INVALID_MEMORY){
         if(result_3 != NULL) free(result_3);

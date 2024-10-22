@@ -44,7 +44,7 @@ void count_ne_bukv(FILE* input, FILE* output){
             count_str += 1;
             count_bukv = 0;
         }
-        else if(!isalnum(c) || c == ' '){
+        else if(!isalnum(c) && c != ' '){
             count_bukv++;
         }
     }
@@ -57,8 +57,14 @@ void asci(FILE* input, FILE* output){
         if(c >= '0' && c <= '9'){
             fputc(c, output);
         }
+        else if(c == '\n' || c == '\r'){
+            fputc(c, output);
+        }
+        else if(c == EOF){
+            break;
+        }
         else{
-            fprintf(output, "%X", c);
+            fprintf(output, "'%X'", c);
         }
     }
 }
